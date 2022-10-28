@@ -7,8 +7,8 @@ public class BallController : MonoBehaviour
     private GameObject player;
     private GameObject target;
     public float force = 18f;
-    private float bounceForce = .9f;
-    private Vector3 direction;
+    private float bounceForce = .8f;
+    public Vector3 direction;
     private Vector3 startPos;
     private float timeUpdate;
     private float radius;
@@ -23,6 +23,8 @@ public class BallController : MonoBehaviour
         target = GameObject.Find("Target");
         radius = gameObject.GetComponent<SphereCollider>().radius;
         direction = (target.transform.position - player.transform.position)/(target.transform.position - player.transform.position).magnitude;
+        
+        PlayerController.direction = direction;
     }
 
     void Update()
@@ -40,6 +42,7 @@ public class BallController : MonoBehaviour
         
         // Get direction before hit ball
         Vector3 dir = Swipe();
+        PlayerController.direction = dir;
 
         // Use OverlapSphere to detect if the ball collide in the next frame
         Collider[] colliders = Physics.OverlapSphere(updatePositionOverTime(timeUpdate + Time.deltaTime * numberOfFrameToPredict), radius, 1);
