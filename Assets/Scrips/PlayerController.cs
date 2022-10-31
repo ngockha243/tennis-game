@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Points = new GameObject[numberOfPoints];
-		for(int i = 0; i<numberOfPoints; i++){
+		for(int i = 0; i < numberOfPoints; i++){
 			Points[i] = Instantiate(PointPrefab, transform.position, Quaternion.identity);
 		}
     }
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
             transform.Translate(new Vector3(h , 0, v) * speed * Time.deltaTime);
         }
 
-        for (int i = 0; i < Points.Length; i++){
+        for (int i = 0; i < numberOfPoints; i++){
             Points[i].transform.position = PointPosition(i * 0.01f);
         }
     }
