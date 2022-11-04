@@ -7,10 +7,12 @@ TagManager:
   - ball
   - wall
   - ground
-  - wallFront
   - wallSide
-  - target
   - destroy
+  - net
+  - bot
+  - tennis-court-player
+  - tennis-court-bot
   layers:
   - Default
   - TransparentFX

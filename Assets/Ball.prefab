@@ -111,9 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bdf0c81c748d64982ac7c285863eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 18
-  PointPrefab: {fileID: 1159715546610225136, guid: 9c72e77544a14a24f81a146421f73275, type: 3}
-  numberOfPoints: 10
+  force: 10
+  direction: {x: 0, y: 0, z: 0}
 --- !u!96 &-8061192283690320782
 TrailRenderer:
   serializedVersion: 2
